@@ -53,11 +53,11 @@ var settings = {
         newValue = newValue ? 1 : 0 // transformovanie hodnot true/false na 1/0
         LED.writeSync(newValue);    // zapnutie/vypnutie LED
         var currentLED = LED.readSync() ? true : false
-        callback(currentLED, 'completed') //odoslanie aktualneho stavu LED a statusu spat do IoT Central
+        callback(currentLED, 'completed') //odoslanie aktualneho stavu LED a statusu spät do IoT Central
     },
 };
 
-// Spracovanie nastavenii prijate z IoT Central cez device twin a aj spatne odoslanie aktualizovaneho device twin.
+// Spracovanie nastavenii prijate z IoT Central cez device twin a aj spätne odoslanie aktualizovaneho device twin.
 function handleSettings(twin) {
     twin.on('properties.desired', function (desiredChange) {
         for (let setting in desiredChange) {
